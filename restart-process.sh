@@ -18,7 +18,7 @@ then
     echo "enter-process-name was already Running"
 else
     echo "Starting enter-process-name ..."
-cd /app/Drools
+cd $WORKSPACE
       nohup /opt/jdk1.8.0_181/bin/java -jar /app/enter-process-name-1.0.0-SNAPSHOT.jar -Xms64m -Xmx512m > nohup.out 2>&1&
 		pid=$(ps ax | grep -i 'enter-process-name' | grep java | grep -v grep | awk '{print $1}')
 			if [ -n "$pid" ]
